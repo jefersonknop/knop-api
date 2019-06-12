@@ -23,7 +23,7 @@ import br.com.knopsistemas.knop.repository.SecaoRepository;
 
 
 @RestController
-@RequestMapping("/secaos")
+@RequestMapping("/secoes")
 @CrossOrigin(origins = "*")
 
 public class SecaoService {

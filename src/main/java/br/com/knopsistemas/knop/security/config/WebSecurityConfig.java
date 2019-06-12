@@ -90,7 +90,10 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 			 	).permitAll()
 			 	.antMatchers("/api/auth/**").permitAll()
 			 	.antMatchers("/cidades/**").permitAll()
+			 	.antMatchers("/estados/**").permitAll()
 			 	.antMatchers("/linhas/**").permitAll()
+			 	.antMatchers("/localidades/**").permitAll()
+			 	.antMatchers("/secoes/**").permitAll()
 			 	.antMatchers("/inquilinos/**").permitAll()
 			 	.anyRequest().authenticated();
 			httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
