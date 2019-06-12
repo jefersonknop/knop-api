@@ -16,26 +16,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.knopsistemas.knop.entities.Cidade;
+import br.com.knopsistemas.knop.entities.Secao;
+import br.com.knopsistemas.knop.entities.Localidade;
 import br.com.knopsistemas.knop.entities.ResponseModel;
-import br.com.knopsistemas.knop.repository.CidadeRepository;
+import br.com.knopsistemas.knop.repository.SecaoRepository;
+
 
 @RestController
-@RequestMapping("/cidades")
+@RequestMapping("/secaos")
 @CrossOrigin(origins = "*")
 
-public class CidadeService {
+public class SecaoService {
 	
 	@Autowired
-	private CidadeRepository cidadeRepository;
+	private SecaoRepository secaoRepository;
 	
 	
 
 	@PostMapping
-	public @ResponseBody ResponseModel save(@RequestBody Cidade cidade){ 
+	public @ResponseBody ResponseModel save(@RequestBody Secao secao){ 
  
 		try { 
-			this.cidadeRepository.save(cidade); 
+			this.secaoRepository.save(secao); 
 			return new ResponseModel(1,"Registro salvo com sucesso!");
  
 		}catch(Exception e) { 
@@ -45,11 +47,11 @@ public class CidadeService {
 	
 
 	@PutMapping
-	public @ResponseBody ResponseModel update(@RequestBody Cidade cidade){
+	public @ResponseBody ResponseModel update(@RequestBody Secao secao){
  
 		try {
  
-			this.cidadeRepository.save(cidade);		
+			this.secaoRepository.save(secao);		
  
 			return new ResponseModel(1,"Registro atualizado com sucesso!");
  
@@ -62,14 +64,14 @@ public class CidadeService {
 	
 	@DeleteMapping("/{id}")	
 	public @ResponseBody ResponseModel delete(@PathVariable("id") Long id){ 
-		Optional <Cidade> cidade = cidadeRepository.findById(id);
-		if (!cidade.isPresent()) {				
+		Optional <Secao> secao = secaoRepository.findById(id);
+		if (!secao.isPresent()) {				
 			return new ResponseModel(0, "Registro inexistente!");						
 		
 		}
 		else { 		
 			try {	 
-				cidadeRepository.delete(cidade.get());	 
+				secaoRepository.delete(secao.get());	 
 				return new ResponseModel(1, "Registro excluido com sucesso!");
 	 
 			}catch(Exception e) {
@@ -82,23 +84,23 @@ public class CidadeService {
 
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Cidade> findById (@PathVariable Long id){
-		Optional<Cidade> cidade = cidadeRepository.findById(id);
+	public ResponseEntity<Secao> findById (@PathVariable Long id){
+		Optional<Secao> secao = secaoRepository.findById(id);
 		
-		if (cidade == null) 
+		if (secao == null) 
 			return ResponseEntity.notFound().build();	 
 		else
-			return ResponseEntity.ok(cidade.get());
+			return ResponseEntity.ok(secao.get());
 					
 	}
 	
 
-	@GetMapping
-	public @ResponseBody List<Cidade> findAll(){ 
-		return this.cidadeRepository.findAll();
+
+	
+	@GetMapping("/inquilino/{inquilino}")
+	public @ResponseBody List<Secao> findAll(@PathVariable Long inquilino){
+		return this.secaoRepository.findByInquilino(inquilino);
 	}
-	
-	
 	
  
 

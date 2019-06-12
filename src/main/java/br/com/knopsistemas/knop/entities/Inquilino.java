@@ -1,4 +1,4 @@
-package br.com.knopsistemas.knop.model;
+package br.com.knopsistemas.knop.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +16,9 @@ public class Inquilino {
 	@GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
+	
+	
+
 	
 	@NotEmpty
 	@Size (max = 30)

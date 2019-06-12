@@ -1,4 +1,4 @@
-package br.com.knopsistemas.knop.model;
+package br.com.knopsistemas.knop.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

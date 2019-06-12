@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.knopsistemas.knop.model.Estado;
-import br.com.knopsistemas.knop.model.ResponseModel;
+import br.com.knopsistemas.knop.entities.Estado;
+import br.com.knopsistemas.knop.entities.ResponseModel;
 import br.com.knopsistemas.knop.repository.EstadoRepository;
 
 @RestController

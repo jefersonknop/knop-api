@@ -16,26 +16,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.knopsistemas.knop.entities.Cidade;
+import br.com.knopsistemas.knop.entities.Linha;
+import br.com.knopsistemas.knop.entities.Localidade;
 import br.com.knopsistemas.knop.entities.ResponseModel;
-import br.com.knopsistemas.knop.repository.CidadeRepository;
+import br.com.knopsistemas.knop.repository.LocalidadeRepository;
+
 
 @RestController
-@RequestMapping("/cidades")
+@RequestMapping("/localidades")
 @CrossOrigin(origins = "*")
 
-public class CidadeService {
+public class LocalidadeService {
 	
 	@Autowired
-	private CidadeRepository cidadeRepository;
+	private LocalidadeRepository localidadeRepository;
 	
 	
 
 	@PostMapping
-	public @ResponseBody ResponseModel save(@RequestBody Cidade cidade){ 
+	public @ResponseBody ResponseModel save(@RequestBody Localidade localidade){ 
  
 		try { 
-			this.cidadeRepository.save(cidade); 
+			this.localidadeRepository.save(localidade); 
 			return new ResponseModel(1,"Registro salvo com sucesso!");
  
 		}catch(Exception e) { 
@@ -45,11 +47,11 @@ public class CidadeService {
 	
 
 	@PutMapping
-	public @ResponseBody ResponseModel update(@RequestBody Cidade cidade){
+	public @ResponseBody ResponseModel update(@RequestBody Localidade localidade){
  
 		try {
  
-			this.cidadeRepository.save(cidade);		
+			this.localidadeRepository.save(localidade);		
  
 			return new ResponseModel(1,"Registro atualizado com sucesso!");
  
@@ -62,14 +64,14 @@ public class CidadeService {
 	
 	@DeleteMapping("/{id}")	
 	public @ResponseBody ResponseModel delete(@PathVariable("id") Long id){ 
-		Optional <Cidade> cidade = cidadeRepository.findById(id);
-		if (!cidade.isPresent()) {				
+		Optional <Localidade> localidade = localidadeRepository.findById(id);
+		if (!localidade.isPresent()) {				
 			return new ResponseModel(0, "Registro inexistente!");						
 		
 		}
 		else { 		
 			try {	 
-				cidadeRepository.delete(cidade.get());	 
+				localidadeRepository.delete(localidade.get());	 
 				return new ResponseModel(1, "Registro excluido com sucesso!");
 	 
 			}catch(Exception e) {
@@ -82,20 +84,21 @@ public class CidadeService {
 
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Cidade> findById (@PathVariable Long id){
-		Optional<Cidade> cidade = cidadeRepository.findById(id);
+	public ResponseEntity<Localidade> findById (@PathVariable Long id){
+		Optional<Localidade> localidade = localidadeRepository.findById(id);
 		
-		if (cidade == null) 
+		if (localidade == null) 
 			return ResponseEntity.notFound().build();	 
 		else
-			return ResponseEntity.ok(cidade.get());
+			return ResponseEntity.ok(localidade.get());
 					
 	}
 	
 
-	@GetMapping
-	public @ResponseBody List<Cidade> findAll(){ 
-		return this.cidadeRepository.findAll();
+
+	@GetMapping("/inquilino/{inquilino}")
+	public @ResponseBody List<Localidade> findAll(@PathVariable Long inquilino){
+		return this.localidadeRepository.findByInquilino(inquilino);
 	}
 	
 	

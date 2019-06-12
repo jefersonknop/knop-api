@@ -1,4 +1,4 @@
-package br.com.knopsistemas.knop.model;
+package br.com.knopsistemas.knop.entities;
 
 public class ResponseModel {
 	private int codigo;
