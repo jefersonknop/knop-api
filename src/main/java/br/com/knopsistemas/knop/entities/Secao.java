@@ -17,17 +17,17 @@ public class Secao {
     @GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
 	
-	@NotEmpty
+	
     @JoinColumn(name = "linha_id", referencedColumnName = "id")
     @ManyToOne
 	private Linha linha_id;
 	
-	@NotEmpty
+	
     @JoinColumn(name = "localidade1_id", referencedColumnName = "id")
     @ManyToOne
 	private Localidade localidade1_id;
 	
-	@NotEmpty
+	
     @JoinColumn(name = "localidade2_id", referencedColumnName = "id")
     @ManyToOne
 	private Localidade localidade2_id;
@@ -49,7 +49,7 @@ public class Secao {
     private String informacoes;
 	
 	
-	@NotEmpty
+	
     @JoinColumn(name = "inquilino_id", referencedColumnName = "id")
     @ManyToOne
 	private Inquilino inquilino_id;

@@ -25,7 +25,7 @@ public class Localidade {
 	@Size (max = 100)
     private String tipo;
 	
-	@NotEmpty
+	
     @JoinColumn(name = "cidade_id", referencedColumnName = "id")
     @ManyToOne
 	private Cidade cidade_id;
@@ -40,7 +40,7 @@ public class Localidade {
     private String informacoes;
 	
 	
-	@NotEmpty
+
     @JoinColumn(name = "inquilino_id", referencedColumnName = "id")
     @ManyToOne
 	private Inquilino inquilino_id;

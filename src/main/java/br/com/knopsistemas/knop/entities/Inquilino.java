@@ -52,7 +52,7 @@ public class Inquilino {
 	@Size (max = 100)
 	private String  bairro;
 
-	@NotEmpty
+
     @JoinColumn(name = "cidade", referencedColumnName = "id")
     @ManyToOne
 	private Cidade  cidade;

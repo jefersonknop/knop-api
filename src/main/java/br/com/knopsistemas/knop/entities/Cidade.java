@@ -24,7 +24,7 @@ public class Cidade {
 	private Integer densidade_demo;	    
     private String gentilico;
 	private Integer area;
-	@NotEmpty
+	
     @JoinColumn(name = "estado_id", referencedColumnName = "id")
     @ManyToOne
 	private Estado estado_id;
