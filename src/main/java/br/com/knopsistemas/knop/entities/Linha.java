@@ -38,11 +38,8 @@ public class Linha {
 	@Size (max = 1024)
     private String informacoes;
 	
-	
-	//@NotEmpty
-    @JoinColumn(name = "inquilino_id", referencedColumnName = "id")
-    @ManyToOne
-	private Inquilino inquilino_id;
+
+	private Long inquilino_id;
 	
 	
 
@@ -96,10 +93,10 @@ public class Linha {
 	public void setInformacoes(String informacoes) {
 		this.informacoes = informacoes;
 	}
-	public Inquilino getInquilino_id() {
+	public Long getInquilino_id() {
 		return inquilino_id;
 	}
-	public void setInquilino_id(Inquilino inquilino_id) {
+	public void setInquilino_id(Long inquilino_id) {
 		this.inquilino_id = inquilino_id;
 	}
 	@Override
