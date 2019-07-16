@@ -95,6 +95,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 			 	.antMatchers("/localidades/**").permitAll()
 			 	.antMatchers("/secoes/**").permitAll()
 			 	.antMatchers("/inquilinos/**").permitAll()
+			 	.antMatchers("/email/**").permitAll()
 			 	.anyRequest().authenticated();
 			httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 			httpSecurity.headers().cacheControl();

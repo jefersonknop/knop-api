@@ -13,6 +13,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import br.com.knopsistemas.knop.enums.ProfileEnum;
 
@@ -65,6 +66,7 @@ public class Usuario{
 
 
 	public void setEmail(String email) {
+		
 		this.email = email;
 	}
 

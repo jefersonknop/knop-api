@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,9 @@ import br.com.knopsistemas.knop.entities.ResponseModel;
 import br.com.knopsistemas.knop.entities.Usuario;
 import br.com.knopsistemas.knop.repository.UsuarioRepository;
 
+
+
+
 @RestController
 @RequestMapping("/usuarios")
 @CrossOrigin(origins = "*")
@@ -30,11 +34,13 @@ public class UsuarioService {
 	private UsuarioRepository UsuarioRepository;
 	
 	
+	
 
 	@PostMapping
-	public @ResponseBody ResponseModel save(@RequestBody Usuario Usuario){ 
- 
+	public @ResponseBody ResponseModel save(@RequestBody Usuario Usuario){  
 		try { 
+			
+			
 			this.UsuarioRepository.save(Usuario); 
 			return new ResponseModel(1,"Registro salvo com sucesso!");
  
