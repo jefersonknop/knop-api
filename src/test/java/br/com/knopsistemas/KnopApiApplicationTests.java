@@ -1,4 +1,4 @@
-package br.com.knopsistemas.knop;
+package br.com.knopsistemas;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
