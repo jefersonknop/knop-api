@@ -80,7 +80,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 			 	.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 			 	.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 			 	.authorizeRequests()
-			 	.antMatchers(
+			 	.antMatchers(			 			
 			 			HttpMethod.GET,
 			 			"/",			 			
 			 			"/*.html",
@@ -105,7 +105,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 		         
 		  }
 		
-		
+		//teste de atualizaçao
 	 
 	
 	}
