@@ -106,6 +106,10 @@ public class CidadeService {
 		return this.cidadeRepository.findByEstado_id(estado_id);
 	}
 	
+	@GetMapping("/estado/nome/{nome}")
+	public @ResponseBody List<Cidade> findByEstado(@PathVariable String nome){
+		return this.cidadeRepository.findByEstado(nome);
+	}
 	
 	
  
