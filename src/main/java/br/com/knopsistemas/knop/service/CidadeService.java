@@ -112,6 +112,15 @@ public class CidadeService {
 	}
 	
 	
+	@GetMapping("/estado/sigla/{sigla}")
+	public @ResponseBody List<Cidade> findBySiglaEstado(@PathVariable String sigla){
+		return this.cidadeRepository.findBySiglaEstado(sigla);
+	}
+
+	
+	
+	
+	
  
 
 }

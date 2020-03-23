@@ -20,5 +20,11 @@ public interface CidadeRepository extends JpaRepository<Cidade, Long> {
 	
 	@Query(value = "SELECT c.* FROM CIDADE c JOIN ESTADO e ON c.ESTADO_ID = e.ID WHERE e.NOME =?1", nativeQuery = true)	  
 	List<Cidade> findByEstado (String nome);
+	
+	
+	@Query(value = "SELECT c.* FROM CIDADE c JOIN ESTADO e ON c.ESTADO_ID = e.ID WHERE e.SIGLA =?1", nativeQuery = true)	  
+	List<Cidade> findBySiglaEstado (String sigla);
 }
+
+
 
