@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.knopsistemas.knop.entities.Cidade;
+import br.com.knopsistemas.knop.entities.Linha;
 import br.com.knopsistemas.knop.entities.ResponseModel;
 import br.com.knopsistemas.knop.repository.CidadeRepository;
 
@@ -96,6 +97,13 @@ public class CidadeService {
 	@GetMapping
 	public @ResponseBody List<Cidade> findAll(){ 
 		return this.cidadeRepository.findAll();
+	}
+	
+	
+	
+	@GetMapping("/estado/{estado_id}")
+	public @ResponseBody List<Cidade> findByEstado_id(@PathVariable Long estado_id){
+		return this.cidadeRepository.findByEstado_id(estado_id);
 	}
 	
 	
