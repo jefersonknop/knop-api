@@ -4,9 +4,9 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -23,10 +23,14 @@ public class ProdutoMarca {
     @Basic(optional = false)
     @Column(name = "ID")
     private Long id;
+	
+	@Size (max = 50)
     @Column(name = "NOME")
     private String nome;
+    
     @Column(name = "DESCRICAO")
     private String descricao;
+    
     @Column(name = "INQUILINO_ID")
     private Long inquilino_id;
 
@@ -67,9 +71,13 @@ public class ProdutoMarca {
 	}
 
 	@Override
-    public String toString() {
-        return "kontrol.operacional.java.ProdutoMarca[id=" + id + "]";
-    }
+	public String toString() {
+		return "ProdutoMarca [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", inquilino_id="
+				+ inquilino_id + "]";
+	}
 
+
+	
+	
 }
 
