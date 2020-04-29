@@ -1,6 +1,6 @@
 package br.com.knopsistemas.knop.security.entities;
 
-import br.com.knopsistemas.knop.entities.Usuario;
+import br.com.knopsistemas.knop.system.entities.Usuario;
 
 public class CurrentUser {
 	private String token;

@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import br.com.knopsistemas.knop.entities.Inquilino;
-import br.com.knopsistemas.knop.entities.Usuario;
-import br.com.knopsistemas.knop.enums.ProfileEnum;
-import br.com.knopsistemas.knop.repository.UsuarioRepository;
+import br.com.knopsistemas.knop.system.entities.Inquilino;
+import br.com.knopsistemas.knop.system.entities.Usuario;
+import br.com.knopsistemas.knop.system.enums.ProfileEnum;
+import br.com.knopsistemas.knop.system.repository.UsuarioRepository;
 
 @SpringBootApplication
 public class KnopApiApplication {

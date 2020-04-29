@@ -3,11 +3,13 @@ package br.com.knopsistemas.knop.security.jwt;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.knopsistemas.knop.entities.Usuario;
-import br.com.knopsistemas.knop.enums.ProfileEnum;
+
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import br.com.knopsistemas.knop.system.entities.Usuario;
+import br.com.knopsistemas.knop.system.enums.ProfileEnum;
 
 public class JwtUserFactory {
 	

@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.knopsistemas.knop.entities.Usuario;
+import br.com.knopsistemas.knop.system.entities.Usuario;
 import br.com.knopsistemas.knop.security.entities.CurrentUser;
 import br.com.knopsistemas.knop.security.jwt.JwtAuthenticationRequest;
 import br.com.knopsistemas.knop.security.jwt.JwtTokenUtil;
-import br.com.knopsistemas.knop.service.UsuarioService;
+import br.com.knopsistemas.knop.system.service.UsuarioService;
 
 @RestController
 @CrossOrigin(origins = "*")

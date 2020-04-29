@@ -6,9 +6,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.knopsistemas.knop.entities.Usuario;
+
 import br.com.knopsistemas.knop.security.jwt.JwtUserFactory;
-import br.com.knopsistemas.knop.service.UsuarioService;
+import br.com.knopsistemas.knop.system.entities.Usuario;
+import br.com.knopsistemas.knop.system.service.UsuarioService;
+
 
 @Service
 public class JwtUserDetailsServiceImpl implements UserDetailsService {
