@@ -95,10 +95,26 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 			 	.antMatchers("/localidades/**").permitAll()
 			 	.antMatchers("/secoes/**").permitAll()
 			 	.antMatchers("/inquilinos/**").permitAll()
-			 	.antMatchers("/email/**").permitAll()
+			 	.antMatchers("/email/**").permitAll()		
+			 	//operacional
+			 	.antMatchers("/almoxarifados/**").permitAll()	 
+			 	.antMatchers("/contadores/**").permitAll()	
+			 	.antMatchers("/empresas/**").permitAll()	
+			 	.antMatchers("/produtoGrupos/**").permitAll()	
+			 	.antMatchers("/produtoMarcas/**").permitAll()	
+			 	.antMatchers("/produtos/**").permitAll()	
+			 	.antMatchers("/produtoSubGrupos/**").permitAll()	
+			 	.antMatchers("/sindicatos/**").permitAll()	
+			 	.antMatchers("/unidadeProdutos/**").permitAll()		
+			 	//administrativo
+			 	.antMatchers("/admModulos/**").permitAll()		
+			 	//base
+			 	.antMatchers("/fpas/**").permitAll()		
+			 	//tributacao
+			 	.antMatchers("/tributGrupoTributarios/**").permitAll()		
+			 	.antMatchers("/tributIcmsCustomCabs/**").permitAll()		
 			 	
-			 	.antMatchers("/fpas/**").permitAll()
-			 	.antMatchers("/empresas/**").permitAll()
+			 	
 			 	.anyRequest().authenticated();
 			httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
 			httpSecurity.headers().cacheControl();

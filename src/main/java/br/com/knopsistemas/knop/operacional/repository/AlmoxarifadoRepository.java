@@ -18,6 +18,6 @@ public interface AlmoxarifadoRepository extends JpaRepository<Almoxarifado, Long
 	List<Almoxarifado> findByInquilino(Long id);
 	 
 	 
-	//List<ProdutoMarca> findByNomeStartingWith(String nome);
+	//List<Almoxarifado> findByEmpresa(Empresa empresa);
 }
 
